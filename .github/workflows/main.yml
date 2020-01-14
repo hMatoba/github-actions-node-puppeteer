@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Prepare Dockerfile
+      run: echo "matoba/np:12-alpine\nCOPY . ." >> Dockerfile
+    - uses: actions/checkout@v1
+    - name: Run a multi-line script
+      run: |
+        docker build .
