@@ -14,4 +14,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         docker build -t node-puppeteer .
-        docker run node-puppeteer /bin/sh -c "npm ci; npm test:e2e"
+        docker run node-puppeteer /bin/sh -c "npm ci; npm run test:e2e"
