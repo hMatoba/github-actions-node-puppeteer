@@ -13,4 +13,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
       run: |
-        docker build .
+        docker build -t ci .
+        docker run --entrypoint="npm test" ci
